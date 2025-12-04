@@ -1,8 +1,16 @@
 /*********************************************************************************
-*  WEB422 – Assignment 02
-*  I declare that this assignment is my own work...
-*  Name: Maisha Maliha Nava Student ID: 162380232  Date: 2025-11-03
-********************************************************************************/
+*  WEB422 – Assignment 3
+*
+*  I declare that this assignment is my own work in accordance with Seneca's
+*  Academic Integrity Policy:
+* 
+*  https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
+* 
+*  Name: Maisha Maliha Nava | Student ID: 162380232 | Date: 02-12-2025
+*
+*  Vercel App (Deployed) Link: ""
+*
+********************************************************************************/ 
 
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";

@@ -1,6 +1,7 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useAtom } from "jotai";
 import { favouritesAtom } from "@/store";
+import { addToFavourites, removeFromFavourites } from "@/lib/userData";
 import { useState, useEffect } from "react";
 
 export default function BookDetails({ book, workId, showFavouriteBtn = true }) {
@@ -9,17 +10,15 @@ export default function BookDetails({ book, workId, showFavouriteBtn = true }) {
   console.log(workId)
   useEffect(() => {
     if (workId) {
-      setShowAdded(favouritesList.includes(workId));
+      setShowAdded(favouritesList?.includes(workId));
     }
-  }, [favouritesList, workId]);
+  }, [favouritesList]);
 
-  function favouritesClicked() {
+  async function favouritesClicked() {
     if (showAdded) {
-      setFavouritesList((current) => current.filter((fav) => fav !== workId));
-      setShowAdded(false);
+      setFavouritesList(await removeFromFavourites(workId));
     } else {
-      setFavouritesList((current) => [...current, workId]);
-      setShowAdded(true);
+      setFavouritesList(await addToFavourites(workId));
     }
   }
 
