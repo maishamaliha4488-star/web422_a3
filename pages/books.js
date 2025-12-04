@@ -9,7 +9,6 @@ export default function Books() {
   const [pageData, setPageData] = useState([]);
   const router = useRouter();
 
-  // Build query string from router.query
   const queryString = typeof window === "undefined"
     ? "" : new URLSearchParams(router.query).toString();
 
